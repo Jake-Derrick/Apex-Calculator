@@ -1,22 +1,33 @@
 $(document).ready(function(){
     $('input[type=radio]').click(function(){
     var _value = this.value
-        //alert(_value);
+
+    var EasyTable = document.getElementById('EasyTable');
+    //Hides table when new radio button is selected
+    EasyTable.style.display = 'none';
+
+    var MediumTable = document.getElementById('MediumTable');
+    MediumTable.style.display = 'none';
+
+    var HardTable = document.getElementById('HardTable')
+    HardTable.style.display = 'none';
+
         if(_value == "Easy")
         {
-					document.getElementById("test").innerHTML = "Zero kills = 5 pushups, Squad placement 20 to 15 = 5 pushups, squad placement 14 to 10 = 2 pushups";  
+            // Displays table (div) when radio button is selected
+            EasyTable.style.display = 'block';
         }
         else if(_value == "Medium")
         {
-        	document.getElementById("test").innerHTML = "Zero kills = 7 pushups, Squad placement 20 to 15 = 7 pushups, squad placement 14 to 10 = 3 pushups.";  
+            MediumTable.style.display = 'block';
         }
         else if(_value == "Hard")
         {
-            document.getElementById("test").innerHTML = "Zero kills = 10 pushups, Squad placement 20 to 15 = 10 pushups, squad placement 14 to 10 = 5 pushups.";
+            HardTable.style.display = 'block';
         }
         else
         {
-            document.getElementById("test").innerHTML = "An error with radio button values has occured"
+            //Custom option?
         }
     });
 });
